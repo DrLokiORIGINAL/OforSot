@@ -1,0 +1,158 @@
+﻿<Page x:Class="OforSot.PageFolder.DirectorFolder.AddDirectorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OforSot.PageFolder.DirectorFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="800"
+      Title="EditDirectorPage">
+    <Border  CornerRadius="17"
+        Style="{StaticResource TopBorder}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="LastNameTb"
+                 Grid.Row="0"
+                 materialDesign:HintAssist.Hint="Фамилия"
+                 materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding SpecialistLastName}"/>
+
+            <TextBox x:Name="FirstNameTb"
+                 Grid.Row="1"
+                 materialDesign:HintAssist.Hint="Имя"
+                 materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding SpecialistFirstName}"/>
+
+            <TextBox x:Name="MiddleNameTb"
+                 Grid.Row="3"
+                 materialDesign:HintAssist.Hint="Отчество"
+                 materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding SpecialistMeddleName}"/>
+
+
+            <TextBox x:Name="SerialPassportTb" 
+                 Grid.Row="5" Grid.Column="0"
+                 materialDesign:HintAssist.Hint="Серия паспорта"
+                 materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding PassportSeries}"/>
+
+            <TextBox x:Name="NumberPassportTb"
+                 Grid.Row="7"
+                 materialDesign:HintAssist.Hint="Номер паспорта"
+                 materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding PassportNumber}"/>
+
+            <TextBox x:Name="PastPositionTb"
+                 Grid.Row="9"
+                 materialDesign:HintAssist.Hint="Прошлая должность"
+                     materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding PastPosition}"/>
+
+            <TextBox x:Name="PlaceOfEducationTb"
+                 Grid.Row="13" Grid.Column="0"
+                 materialDesign:HintAssist.Hint="Место получения образования"
+                     materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding PlaceOfEducation}"/>
+
+            <ComboBox x:Name="MilitaryIDIdCb"
+                 Grid.Row="0" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Есть ли военный билет"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding MilitaryID}"
+                          DisplayMemberPath="MilitaryIDName"
+                          SelectedValuePath="MilitaryIDId"
+                  HorizontalContentAlignment="Left"/>
+
+            <ComboBox x:Name="GovernmentServiceCb"
+                 Grid.Row="1" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Является ли бывшим гос. служащим"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding GovernmentService}"
+                          DisplayMemberPath="GovernmentServiceName"
+                          SelectedValuePath="GovernmentServiceId"
+                  HorizontalContentAlignment="Left"/>
+
+            <ComboBox x:Name="EducationCb"
+                 Grid.Row="3" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Какое образование"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding Education}"
+                          DisplayMemberPath="EducationName"
+                          SelectedValuePath="EducationId"
+                  HorizontalContentAlignment="Left"/>
+            <ComboBox x:Name="DisabilityCb"
+                 Grid.Row="5" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Имеется ли инвалидность"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding Disability}"
+                          DisplayMemberPath="DisabilityName"
+                          SelectedValuePath="DisabilityId"
+                  HorizontalContentAlignment="Left"/>
+
+            <ComboBox x:Name="EmploymentHistoryCb"
+                 Grid.Row="7" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Есть ли трудовая книжка"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding EmploymentHistory}"
+                          DisplayMemberPath="EmploymentHistoryName"
+                          SelectedValuePath="EmploymentHistoryId"
+                  HorizontalContentAlignment="Left"/>
+
+            <ComboBox x:Name="MedicalBookCb"
+                 Grid.Row="9" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Есть ли медицинская книжка"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding MedicalBook}"
+                          DisplayMemberPath="MedicalBookName"
+                          SelectedValuePath="MedicalBookId"
+                  HorizontalContentAlignment="Left"/>
+
+            <ComboBox x:Name="SnilsCb"
+                 Grid.Row="11" Grid.Column="2"
+                 materialDesign:HintAssist.Hint="Есть ли снилс"
+                  materialDesign:HintAssist.HintOpacity="10"
+                     SelectedItem="{Binding Snils}"
+                          DisplayMemberPath="SnilsName"
+                          SelectedValuePath="SnilsId"
+                  HorizontalContentAlignment="Left"/>
+
+            <TextBox x:Name="LastPlaceOfWorkTb" 
+                 Grid.Column="0"
+                 Grid.Row="11"
+                 materialDesign:HintAssist.Hint="Предыдущее место работы"
+                     materialDesign:HintAssist.HintOpacity="10"
+                 Text="{Binding LastPlaceOfWork}"/>
+
+            <Button x:Name="AddBtn"
+                Click="AddBtn_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                Grid.Column="2" Grid.Row="13"
+                    Content="Добавить сотрудника" Cursor="Hand">
+                
+            </Button>
+        </Grid>
+    </Border>
+</Page>

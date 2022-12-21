@@ -1,0 +1,84 @@
+﻿<Window x:Class="OforSot.WindowFolder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OforSot.WindowFolder"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip" 
+        Height="750" Width="1200"
+        MaxHeight="750" MaxWidth="1200"
+        MinHeight="750" MinWidth="1200">
+    <Grid>
+        <Border Style="{DynamicResource MainBorder}"
+                Margin="0"
+                MouseDown="Border_MouseDown">
+            <Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/ResourceFolder/ImageFolder/free-icon-employee-3374063.png"/>
+
+                        <StackPanel Grid.Row="1">
+                            <Button x:Name="ListBookBtn" Width="260"
+                                Click="ListBookBtn_Click" Cursor="Hand">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/ResourceFolder/ImageFolder/Список.png" 
+                                   Width="40" Height="40"/>
+                                    <TextBlock Text="Список Пользователей" Style="{DynamicResource ButtonTextBlock}"/>
+
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="AddBookBtn" Width="260"
+                                Click="AddBookBtn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/ResourceFolder/ImageFolder/Добавление.png" 
+                                   Width="40" Height="40"/>
+                                    <TextBlock Text="Добавить пользователя" Style="{DynamicResource ButtonTextBlock}"/>
+
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Button x:Name="ExitBtn" Width="260"
+                            HorizontalContentAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Grid.Row="1" Click="ExitBtn_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/ResourceFolder/ImageFolder/Выход.png"
+                               Width="40" Height="40"/>
+                                <TextBlock Text="Выйти"
+                                   Style="{DynamicResource ButtonTextBlock}"/>
+                            </StackPanel>
+                        </Button>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Style="{DynamicResource HeadingLabel}"
+                           Content="{Binding ElementName=MainFrame,
+                        Path=Content.Title}"/>
+                        <Frame Grid.Row="1" Name="MaiFrame" Margin="10"
+                           NavigationUIVisibility="Hidden"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
